@@ -1,0 +1,1006 @@
+#include <stdio.h>
+int main()
+{
+    int i, j, end, sum;
+    printf("Enter upper limit: ");
+    scanf("%d", &end);
+    printf("All Perfect numbers between 1 to %d:\n", end);
+    for(i=1; i<=end; i++)
+    {
+        sum = 0;
+        for(j=1; j<i; j++)
+        {
+            if(i % j == 0)
+            {
+                sum += j;
+            }
+        }
+        if(sum == i)
+        {
+            printf("%d, ", i);
+        }
+    }
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+int power(int b,int e)
+{
+    if(e==0)
+        return 1;
+    else 
+        return (b*power(b,e-1));
+}
+void main()
+{
+    int base,exponent;
+    printf("Enter the base\n");
+    scanf("%d",&base);
+    printf("Enter the exponent\n");
+    scanf("%d",&exponent);
+
+    printf("Power(%d^%d) = %d\n",base,exponent,power(base,exponent));
+}
+
+
+
+/**
+ * C program to find cube of any number using function
+ */
+#include <stdio.h>
+
+/* Function declaration */
+double cube(double num);
+
+int main()
+{
+    int num;
+    double c;
+    
+    /* Input number to find cube from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    
+    c = cube(num);
+
+    printf("Cube of %d is %.2f", num, c); 
+    
+    return 0;
+}
+
+/**
+ * Function to find cube of any number
+ */
+double cube(double num)
+{
+    return (num * num * num);
+}
+
+
+
+
+/**
+ * C program to check even or odd number
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    /* Input number from user */
+    printf("Enter any number to check even or odd: ");
+    scanf("%d", &num);
+    
+    /* Check if the number is divisible by 2 then it is even */
+    if(num % 2 == 0)
+    {
+        /* num % 2 is 0 */
+        printf("Number is Even.");
+    }
+    else
+    {
+        /* num % 2 is 1 */
+        printf("Number is Odd.");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+ #include <conio.h>
+ 
+ 
+int main()
+{
+    int a[1000],i,n,min,max;
+   
+    printf("Enter size of the array : ");
+    scanf("%d",&n);
+ 
+    printf("Enter elements in array : ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+ 
+    min=max=a[0];
+    for(i=1; i<n; i++)
+    {
+         if(min>a[i])
+		  min=a[i];   
+		   if(max<a[i])
+		    max=a[i];       
+    }
+     printf("minimum of array is : %d",min);
+          printf("\nmaximum of array is : %d",max);
+ 
+ 
+    return 0;
+}
+
+
+
+
+
+/**
+ * C program to check prime, armstrong and perfect numbers using functions
+ */
+
+#include <stdio.h>
+#include <math.h>
+
+
+/* Function declarations */
+int isPrime(int num);
+int isArmstrong(int num);
+int isPerfect(int num);
+
+
+int main()
+{
+    int num;
+    
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    
+    // Call isPrime() functions
+    if(isPrime(num))
+    {
+        printf("%d is Prime number.\n", num);
+    }
+    else
+    {
+        printf("%d is not Prime number.\n", num);
+    }
+    
+    // Call isArmstrong() function
+    if(isArmstrong(num))
+    {
+        printf("%d is Armstrong number.\n", num);
+    }
+    else
+    {
+        printf("%d is not Armstrong number.\n", num);
+    }
+    
+    // Call isPerfect() function
+    if(isPerfect(num))
+    {
+        printf("%d is Perfect number.\n", num);
+    }
+    else
+    {
+        printf("%d is not Perfect number.\n", num);
+    }
+    
+    return 0;
+}
+
+
+
+/**
+ * Check whether a number is prime or not. 
+ * Returns 1 if the number is prime otherwise 0.
+ */
+int isPrime(int num) 
+{
+    int i;
+    
+    for(i=2; i<=num/2; i++)  
+    {  
+        /*  
+         * If the number is divisible by any number  
+         * other than 1 and self then it is not prime 
+         */  
+        if(num%i == 0)  
+        {
+            return 0;
+        }  
+    } 
+    
+    return 1; 
+}
+
+
+
+/**
+ * Check whether a number is Armstrong number or not. 
+ * Returns 1 if the number is Armstrong number otherwise 0.
+ */
+int isArmstrong(int num) 
+{
+    int lastDigit, sum, originalNum, digits;
+    sum = 0;
+    
+    originalNum = num;
+
+    /* Find total digits in num */
+    digits = (int) log10(num) + 1;
+
+    /*
+     * Calculate sum of power of digits
+     */
+    while(num > 0)
+    {
+        // Extract the last digit
+        lastDigit = num % 10;
+
+        // Compute sum of power of last digit
+        sum = sum + round(pow(lastDigit, digits));
+
+        // Remove the last digit
+        num = num / 10;
+    }
+    
+    return (originalNum == sum);
+}
+
+
+
+/**
+ * Check whether the number is perfect number or not. 
+ * Returns 1 if the number is perfect otherwise 0.
+ */
+int isPerfect(int num) 
+{
+    int i, sum, n;
+    sum = 0;
+    n = num;
+    
+    for(i=1; i<n; i++)  
+    {  
+        /* If i is a divisor of num */  
+        if(n%i == 0)  
+        {  
+            sum += i;  
+        }  
+    }
+    
+    return (num == sum);
+}
+
+
+
+
+
+
+/**
+ * C program to list all prime number between an interval using function.
+ */
+
+#include <stdio.h>
+
+
+/* Function declarations */
+int isPrime(int num);
+void printPrimes(int lowerLimit, int upperLimit);
+
+
+
+int main()
+{
+    int lowerLimit, upperLimit;
+    
+    printf("Enter the lower and upper limit to list primes: ");
+    scanf("%d%d", &lowerLimit, &upperLimit);
+    
+    // Call function to print all primes between the given range.
+    printPrimes(lowerLimit, upperLimit);
+    
+    return 0;
+}
+
+
+
+/**
+ * Print all prime numbers between lower limit and upper limit. 
+ */
+void printPrimes(int lowerLimit, int upperLimit)
+{
+    printf("All prime number between %d to %d are: ", lowerLimit, upperLimit);
+    
+    while(lowerLimit <= upperLimit)
+    {
+        // Print if current number is prime.
+        if(isPrime(lowerLimit))
+        {
+            printf("%d, ", lowerLimit);
+        }
+        
+        lowerLimit++;
+    }
+}
+
+
+
+/** 
+ * Check whether a number is prime or not. 
+ * Returns 1 if the number is prime otherwise 0. 
+ */  
+int isPrime(int num)   
+{  
+    int i;  
+      
+    for(i=2; i<=num/2; i++)    
+    {    
+        /*   
+         * If the number is divisible by any number   
+         * other than 1 and self then it is not prime  
+         */    
+        if(num % i == 0)    
+        {  
+            return 0;  
+        }    
+    }   
+      
+    return 1;   
+}
+
+
+
+
+
+
+/**
+ * C program to print all Armstrong numbers between a given range
+ */
+ 
+#include <stdio.h>
+
+/* Function declarations */ 
+int isArmstrong(int num);
+void printArmstrong(int start, int end);
+
+
+
+int main()
+{
+    int start, end;
+    
+    /* Input lower and upper limit to of armstrong numbers */
+    printf("Enter lower limit to print armstrong numbers: ");
+    scanf("%d", &start);
+    printf("Enter upper limit to print armstrong numbers: ");
+    scanf("%d", &end);
+    
+    printf("All armstrong numbers between %d to %d are: \n", start, end);
+    printArmstrong(start, end);
+    
+    return 0;
+}
+
+
+/**
+ * Check whether the given number is armstrong number or not.
+ * Returns 1 if the number is armstrong otherwise 0.
+ */
+int isArmstrong(int num)
+{
+    int temp, lastDigit, sum;
+    
+    temp = num;
+    sum = 0;
+    
+    /* Calculate sum of cube of digits */
+    while(temp != 0)
+    {
+        lastDigit = temp % 10;
+        sum += lastDigit * lastDigit * lastDigit;
+        temp /= 10;
+    }
+    
+    /* 
+     * Check if sum of cube of digits equals
+     * to original number.
+     */
+    if(num == sum)
+        return 1;
+    else 
+        return 0;
+}
+
+
+/**
+ * Print all armstrong numbers between start and end. 
+ */
+void printArmstrong(int start, int end)
+{
+    /* 
+     * Iterates from start to end and print the current number 
+     * if it is armstrong
+     */
+    while(start <= end)
+    {
+        if(isArmstrong(start)) 
+        {
+            printf("%d, ", start);
+        }
+        
+        start++;
+    }
+}
+
+
+
+
+
+
+
+/**
+ * C program to print strong numbers in a given interval using functions
+ */
+ 
+#include <stdio.h>
+
+/* Function declaration */
+long long fact(int num);
+void printStrongNumbers(int start, int end);
+
+
+int main()
+{
+    int start, end;
+    
+    /* Input start and end range */
+    printf("Enter the lower limit to find strong number: ");
+    scanf("%d", &start);
+    printf("Enter the upper limit to find strong number: ");
+    scanf("%d", &end);
+    
+    printf("All strong numbers between %d to %d are: \n", start, end);
+    printStrongNumbers(start, end);
+    
+    return 0;
+}
+
+
+/**
+ * Print all strong numbers in a given range
+ */
+void printStrongNumbers(int start, int end)
+{
+    long long sum;
+    int num;
+    
+    // Iterates from start to end
+    while(start != end)
+    {
+        sum = 0;
+        num = start;
+        
+        // Calculate sum of factorial of digits
+        while(num != 0)
+        {
+            sum += fact(num % 10);
+            num /= 10; 
+        }
+        
+        // If sum of factorial of digits equal to current number
+        if(start == sum)
+        {
+            printf("%d, ", start);
+        }
+        
+        start++;
+    }
+}
+
+
+
+/**
+ * Recursively find factorial of any number
+ */
+long long fact(int num)
+{
+    if(num == 0)
+        return 1;
+    else
+        return (num * fact(num-1));
+}
+
+
+
+
+
+
+
+
+/**
+ * C program to print all Perfect numbers between 1 to n 
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j, end, sum;
+
+    /* Input upper limit to print perfect number */
+    printf("Enter upper limit: ");
+    scanf("%d", &end);
+
+    printf("All Perfect numbers between 1 to %d:\n", end);
+    
+    /* Iterate from 1 to end */
+    for(i=1; i<=end; i++)
+    {
+        sum = 0;
+
+        /* Check whether the current number i is Perfect number or not */
+        for(j=1; j<i; j++)
+        {
+            if(i % j == 0)
+            {
+                sum += j;
+            }
+        }
+ 
+        /* If the current number i is Perfect number */
+        if(sum == i)
+        {
+            printf("%d, ", i);
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+/**
+ * C program to find diameter, circumference and area of a circle using functions
+ */
+
+#include <stdio.h>
+#include <math.h> // Used for constant PI referred as M_PI
+
+
+/* Function declaration */
+double getDiameter(double radius);
+double getCircumference(double radius);
+double getArea(double radius);
+
+
+int main() 
+{
+    float radius, dia, circ, area;
+    
+    /* Input radius of circle from user */
+    printf("Enter radius of circle: ");
+    scanf("%f", &radius);
+    
+    dia  = getDiameter(radius);       // Call getDiameter function
+    circ = getCircumference(radius);  // Call getCircumference function
+    area = getArea(radius);           // Call getArea function
+    
+    printf("Diameter of the circle = %.2f units\n", dia);
+    printf("Circumference of the circle = %.2f units\n", circ);
+    printf("Area of the circle = %.2f sq. units", area);
+    
+    return 0;
+}
+
+
+/**
+ * Calculate diameter of circle whose radius is given
+ */
+double getDiameter(double radius) 
+{
+    return (2 * radius);
+}
+
+
+/**
+ * Calculate circumference of circle whose radius is given
+ */
+double getCircumference(double radius) 
+{
+    return (2 * M_PI * radius); // M_PI = PI = 3.14 ... 
+}
+
+
+/**
+ * Find area of circle whose radius is given
+ */
+double getArea(double radius)
+{
+    return (M_PI * radius * radius); // M_PI = PI = 3.14 ...
+}
+
+
+
+
+
+
+
+/** 
+ * C program to print even or odd numbers in given range using recursion
+ */
+
+#include <stdio.h>
+
+
+/* Function declaration */
+void printEvenOdd(int cur, int limit);
+
+
+
+int main()
+{
+    int lowerLimit, upperLimit;
+    
+    // Input lower and upper limit from user
+    printf("Enter lower limit: ");
+    scanf("%d", &lowerLimit);
+    printf("Enter upper limit: ");
+    scanf("%d", &upperLimit);
+    
+    printf("Even/odd Numbers from %d to %d are: ", lowerLimit, upperLimit);
+    printEvenOdd(lowerLimit, upperLimit); 
+    
+    return 0;
+}
+
+
+/**
+ * Recursive function to print even or odd numbers in a given range. 
+ */
+void printEvenOdd(int cur, int limit)
+{
+    if(cur > limit)
+        return;
+    
+    printf("%d, ", cur);
+    
+    // Recursively call to printEvenOdd to get next value
+    printEvenOdd(cur + 2, limit);
+}
+
+
+
+
+
+/**
+ * C program to check palindrome number using recursion
+ */
+ 
+#include <stdio.h>
+#include <math.h>
+
+
+/* Function declarations */ 
+int reverse(int num);
+int isPalindrome(int num);
+
+
+
+int main()
+{
+    int num;
+    
+    /* Input any number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    
+    if(isPalindrome(num) == 1)
+    {
+        printf("%d is palindrome number.\n", num);
+    }
+    else
+    {
+        printf("%d is NOT palindrome number.\n", num);
+    }
+    
+    return 0;
+}
+
+
+
+/**
+ * Function to check whether a number is palindrome or not.
+ * This function returns 1 if the number is palindrome otherwise 0.
+ */
+int isPalindrome(int num)
+{
+    /* 
+     * Check if the given number is equal to 
+     * its reverse.
+     */
+    if(num == reverse(num))
+    {
+        return 1;
+    }
+    
+    return 0;
+}
+
+
+/**
+ * Recursive function to find reverse of any number
+ */
+int reverse(int num)
+{
+    /* Find number of digits in num */
+    int digit = (int)log10(num);
+    
+    /* Recursion base condition */
+    if(num == 0)
+        return 0;
+
+    return ((num%10 * pow(10, digit)) + reverse(num/10));
+}
+
+
+
+
+#include <stdio.h>
+int sum=0,rem;
+int reverse_function(int num){
+  if(num){
+    rem=num%10;
+    sum=sum*10+rem;
+    reverse_function(num/10);
+  }
+  else
+    return sum;
+  return sum;
+}
+int main(){
+  int num,reverse_number;
+
+  //Take the number as an input from user
+  printf("Enter any number:");
+  scanf("%d",&num);
+
+  //Calling user defined function to perform reverse
+  reverse_number=reverse_function(num);
+  printf("The reverse of entered number is :%d",reverse_number);
+  return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+
+ 
+
+void main()
+
+{
+
+    int i, num, odd_sum = 0, even_sum = 0;
+
+ 
+
+    printf("Enter the value of num\n");
+
+    scanf("%d", &num);
+
+    for (i = 1; i <= num; i++)
+
+    {
+
+        if (i % 2 == 0)
+
+            even_sum = even_sum + i;
+
+        else
+
+            odd_sum = odd_sum + i;
+
+    }
+
+    printf("Sum of all odd numbers  = %d\n", odd_sum);
+
+    printf("Sum of all even numbers = %d\n", even_sum);
+
+}
+
+
+
+
+
+
+#include <stdio.h>
+
+
+int sumOfEvenOdd(int start, int end);
+
+
+int main()
+{
+    int start, end, sum;
+
+    /* Input lower and upper limit from user */
+    printf("Enter lower limit: ");
+    scanf("%d", &start);
+    printf("Enter upper limit: ");
+    scanf("%d", &end);
+    
+    printf("Sum of even/odd numbers between %d to %d = %d\n", start, end, sumOfEvenOdd(start, end));
+    
+    return 0;
+}
+
+
+
+/**
+ * Find sum of all even or odd numbers recursively.
+ */
+int sumOfEvenOdd(int start, int end) 
+{
+    /* Base condition */
+    if(start > end)
+        return 0;
+    else
+        return (start + sumOfEvenOdd(start + 2, end));
+}
+
+
+
+
+
+/** 
+ * C program to print even or odd numbers in given range using recursion
+ */
+
+#include <stdio.h>
+
+
+/* Function declaration */
+void printEvenOdd(int cur, int limit);
+
+
+
+int main()
+{
+    int lowerLimit, upperLimit;
+    
+    // Input lower and upper limit from user
+    printf("Enter lower limit: ");
+    scanf("%d", &lowerLimit);
+    printf("Enter upper limit: ");
+    scanf("%d", &upperLimit);
+    
+    printf("Even/odd Numbers from %d to %d are: ", lowerLimit, upperLimit);
+    printEvenOdd(lowerLimit, upperLimit); 
+    
+    return 0;
+}
+
+
+/**
+ * Recursive function to print even or odd numbers in a given range. 
+ */
+void printEvenOdd(int cur, int limit)
+{
+    if(cur > limit)
+        return;
+    
+    printf("%d, ", cur);
+    
+    // Recursively call to printEvenOdd to get next value
+    printEvenOdd(cur + 2, limit);
+}
+
+
+
+#include <stdio.h>
+
+int addNumbers(int n);
+
+int main() {
+
+  int num;
+  printf("Enter a positive integer: ");
+  scanf("%d", &num);
+  printf("Sum = %d", addNumbers(num));
+  return 0;
+}
+
+int addNumbers(int n) {
+  if (n != 0)
+    return n + addNumbers(n - 1);
+  else
+    return n;
+}
+
+
+
+
+/**
+ * C program to find diameter, circumference and area of a circle using functions
+ */
+
+#include <stdio.h>
+#include <math.h> // Used for constant PI referred as M_PI
+
+
+/* Function declaration */
+double getDiameter(double radius);
+double getCircumference(double radius);
+double getArea(double radius);
+
+
+int main() 
+{
+    float radius, dia, circ, area;
+    
+    /* Input radius of circle from user */
+    printf("Enter radius of circle: ");
+    scanf("%f", &radius);
+    
+    dia  = getDiameter(radius);       // Call getDiameter function
+    circ = getCircumference(radius);  // Call getCircumference function
+    area = getArea(radius);           // Call getArea function
+    
+    printf("Diameter of the circle = %.2f units\n", dia);
+    printf("Circumference of the circle = %.2f units\n", circ);
+    printf("Area of the circle = %.2f sq. units", area);
+    
+    return 0;
+}
+
+
+/**
+ * Calculate diameter of circle whose radius is given
+ */
+double getDiameter(double radius) 
+{
+    return (2 * radius);
+}
+
+
+/**
+ * Calculate circumference of circle whose radius is given
+ */
+double getCircumference(double radius) 
+{
+    return (2 * M_PI * radius); // M_PI = PI = 3.14 ... 
+}
+
+
+/**
+ * Find area of circle whose radius is given
+ */
+double getArea(double radius)
+{
+    return (M_PI * radius * radius); // M_PI = PI = 3.14 ...
+}
