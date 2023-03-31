@@ -1,3 +1,5 @@
+1.To find perfect numbers for n natural numbers
+
 #include <stdio.h>
 int main()
 {
@@ -25,6 +27,7 @@ int main()
 
 
 
+2.To find power of a given number
 
 #include <stdio.h>
 int power(int b,int e)
@@ -47,9 +50,9 @@ void main()
 
 
 
-/**
- * C program to find cube of any number using function
- */
+
+ 3. C program to find cube of any number using function
+ 
 #include <stdio.h>
 
 /* Function declaration */
@@ -71,9 +74,11 @@ int main()
     return 0;
 }
 
-/**
- * Function to find cube of any number
- */
+
+
+
+ 4. Function to find cube of any number
+
 double cube(double num)
 {
     return (num * num * num);
@@ -82,9 +87,9 @@ double cube(double num)
 
 
 
-/**
- * C program to check even or odd number
- */
+
+ 5. C program to check even or odd number
+ 
 
 #include <stdio.h>
 
@@ -114,7 +119,7 @@ int main()
 
 
 
-
+6.To find maximun and minimum
 
 #include <stdio.h>
  #include <conio.h>
@@ -152,9 +157,9 @@ int main()
 
 
 
-/**
- * C program to check prime, armstrong and perfect numbers using functions
- */
+
+ 7. C program to check prime, armstrong and perfect numbers using functions
+ 
 
 #include <stdio.h>
 #include <math.h>
@@ -208,10 +213,9 @@ int main()
 
 
 
-/**
- * Check whether a number is prime or not. 
- * Returns 1 if the number is prime otherwise 0.
- */
+
+ 8. Check whether a number is prime or not.  Returns 1 if the number is prime otherwise 0.
+ 
 int isPrime(int num) 
 {
     int i;
@@ -233,10 +237,10 @@ int isPrime(int num)
 
 
 
-/**
+
  * Check whether a number is Armstrong number or not. 
  * Returns 1 if the number is Armstrong number otherwise 0.
- */
+
 int isArmstrong(int num) 
 {
     int lastDigit, sum, originalNum, digits;
@@ -267,10 +271,10 @@ int isArmstrong(int num)
 
 
 
-/**
- * Check whether the number is perfect number or not. 
+
+ 9.* Check whether the number is perfect number or not. 
  * Returns 1 if the number is perfect otherwise 0.
- */
+ 
 int isPerfect(int num) 
 {
     int i, sum, n;
@@ -294,9 +298,9 @@ int isPerfect(int num)
 
 
 
-/**
- * C program to list all prime number between an interval using function.
- */
+
+ 10. C program to list all prime number between an interval using function.
+ 
 
 #include <stdio.h>
 
@@ -322,9 +326,10 @@ int main()
 
 
 
-/**
- * Print all prime numbers between lower limit and upper limit. 
- */
+
+
+ 11. Print all prime numbers between lower limit and upper limit. 
+ 
 void printPrimes(int lowerLimit, int upperLimit)
 {
     printf("All prime number between %d to %d are: ", lowerLimit, upperLimit);
@@ -371,10 +376,9 @@ int isPrime(int num)
 
 
 
-/**
- * C program to print all Armstrong numbers between a given range
- */
- 
+
+ 12. C program to print all Armstrong numbers between a given range
+  
 #include <stdio.h>
 
 /* Function declarations */ 
@@ -456,9 +460,9 @@ void printArmstrong(int start, int end)
 
 
 
-/**
- * C program to print strong numbers in a given interval using functions
- */
+
+ 13. C program to print strong numbers in a given interval using functions
+ 
  
 #include <stdio.h>
 
@@ -535,9 +539,9 @@ long long fact(int num)
 
 
 
-/**
- * C program to print all Perfect numbers between 1 to n 
- */
+
+ 14. C program to print all Perfect numbers between 1 to n 
+ 
 
 #include <stdio.h>
 
@@ -582,9 +586,9 @@ int main()
 
 
 
-/**
- * C program to find diameter, circumference and area of a circle using functions
- */
+
+ 15. C program to find diameter, circumference and area of a circle using functions
+ 
 
 #include <stdio.h>
 #include <math.h> // Used for constant PI referred as M_PI
@@ -648,9 +652,9 @@ double getArea(double radius)
 
 
 
-/** 
- * C program to print even or odd numbers in given range using recursion
- */
+
+ 16. C program to print even or odd numbers in given range using recursion
+ 
 
 #include <stdio.h>
 
@@ -695,9 +699,9 @@ void printEvenOdd(int cur, int limit)
 
 
 
-/**
- * C program to check palindrome number using recursion
- */
+
+ 17. C program to check palindrome number using recursion
+ 
  
 #include <stdio.h>
 #include <math.h>
@@ -750,9 +754,9 @@ int isPalindrome(int num)
 }
 
 
-/**
- * Recursive function to find reverse of any number
- */
+
+ 18. Recursive function to find reverse of any number
+ 
 int reverse(int num)
 {
     /* Find number of digits in num */
@@ -796,7 +800,7 @@ int main(){
 
 
 
-
+19.To find sum of odd or even numbers
 #include <stdio.h>
 
  
